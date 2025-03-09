@@ -1,6 +1,6 @@
 class Calculator{
-    // static a = 0;
-    // static b = 0;
+    static a = 0;
+    static b = 0;
     isInvalidNumber(num) {
         return num === Infinity || num === null || num === undefined || Number.isNaN(num);
     }
@@ -8,8 +8,8 @@ class Calculator{
         if (this.isInvalidNumber(a) || this.isInvalidNumber(b)) {
             throw new Error("Invalid numbers");
         }
-        Calculator.a = a;
-        Calculator.b = b;
+    Calculator.a = a;
+    Calculator.b = b;
 }
 setX(num1) {
     if (this.isInvalidNumber(num1))throw new Error("Invalid numbers")
