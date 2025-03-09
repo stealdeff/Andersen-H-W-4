@@ -44,6 +44,7 @@ Calc.setY(10)
 
 const logSumRef = Calculator.logSum;
 console.log(logSumRef()); 
-console.log(Calculator.logMul()); 
+const logMulRef = Calculator.logMul;
+console.log(logMulRef()); 
 console.log(Calculator.logSub()); 
 console.log(Calculator.logDiv()); 
