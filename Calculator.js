@@ -1,4 +1,6 @@
 class Calculator{
+    // static a = 0;
+    // static b = 0;
     isInvalidNumber(num) {
         return num === Infinity || num === null || num === undefined || Number.isNaN(num);
     }
@@ -6,8 +8,8 @@ class Calculator{
         if (this.isInvalidNumber(a) || this.isInvalidNumber(b)) {
             throw new Error("Invalid numbers");
         }
-        this.a = a;
-        this.b = b;
+        Calculator.a = a;
+        Calculator.b = b;
 }
 setX(num1) {
     if (this.isInvalidNumber(num1))throw new Error("Invalid numbers")
@@ -17,29 +19,31 @@ setY(num2) {
     if (this.isInvalidNumber(num2))throw new Error("Invalid numbers")
     this.b=num2
 }
-  logSum()
+ static logSum=()=>
 {
     return this.a+this.b
 }
- logMul()
+static logMul=()=>
 {
     return this.a*this.b
 }
- logSub(){
+static logSub=()=>{
     let res=0;
     (this.a<=this.b)?res+=this.b-this.a:res+=this.a-this.b
     return res
 }
- logDiv() {
+static logDiv=()=> {
     if (this.b===0) throw new Error("Infinity")
     return this.a / this.b
 }
 };
 const Calc=new Calculator(2,10)
-console.log(Calc.logSum())
-console.log(Calc.logMul())
-console.log(Calc.logSub())
-console.log(Calc.logDiv())
+Calc.setX(2)
+Calc.setY(10)
 
 
-
+const logSumRef = Calculator.logSum;
+console.log(logSumRef()); 
+console.log(Calculator.logMul()); 
+console.log(Calculator.logSub()); 
+console.log(Calculator.logDiv()); 
