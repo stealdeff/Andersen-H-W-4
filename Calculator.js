@@ -32,7 +32,7 @@ setY(num2) {
 }
  logDiv() {
     if (this.b===0) throw new Error("Infinity")
-    return Math.floor(this.a/this.b)
+    return this.a / this.b
 }
 };
 const Calc=new Calculator(2,10)
